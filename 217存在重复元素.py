@@ -13,9 +13,12 @@
 输入: [1,1,1,3,3,4,3,2,4,2]输出: true
 """
 
-def cf(listdata):
+def repeat(listdata):
+    """思路：
+            利用set函数去重，对比列表长度
+    """
     return False if len(set(listdata))==len(listdata) else True
 
 if __name__ == '__main__':
-    a=cf([1,2,2,4])
-    print(a)
+    result=repeat([1,2,2,4])
+    print(result)
