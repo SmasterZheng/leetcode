@@ -26,16 +26,16 @@ def isPalindrome(x: int):
     :param x:
     :return:
     '''
-    if (x < 0 or (x % 10 == 0 & x != 0)):
+    if x < 0 or x != 0 and x % 10 == 0:
         return False
-    s=0
-    while x>s:
-        s=s*10+x%10
-        x/=10
-    return x==s or x==s/10
+    i, k = x, 0
+    while x > 0:
+        k = 10 * k + (x % 10)
+        x //= 10
+    return k == i
 
 if __name__ == '__main__':
-    a=isPalindrome(111)
+    a=isPalindrome(121)
     print(a)
 # 判断水仙花数
 # num = int(input('请输入一个三位数'))
