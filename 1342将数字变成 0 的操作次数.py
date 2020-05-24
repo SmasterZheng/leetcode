@@ -40,5 +40,5 @@ def numberOfSteps (num: int) -> int:
     return s
 
 if __name__ == '__main__':
-    s=numberOfSteps(8)
+    s=numberOfSteps(10)
     print(s)
