@@ -18,8 +18,8 @@ class Solution:
         '''
         for i in range(len(nums)):
             numss=nums[:i]+nums[i+1:]
-            print(numss)
-            for j in range(len(nums)-i):
+            # print(numss,len(nums)-i)
+            for j in range(len(nums)-1):
                 if nums[i]+numss[j]==target:
                     return [i, i+j+1]
                 # else:
@@ -30,4 +30,4 @@ class Solution:
 
 if __name__ == '__main__':
     Solution=Solution()
-    print(Solution.twoSum([3,2,4],6))
+    print(Solution.twoSum([3,2,4,8],6))
