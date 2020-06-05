@@ -44,8 +44,12 @@ class Solution:
         '''
         target=[]
         for i in range(len(nums)):
-            target.insert(index[i],nums[i])
+            # target.insert(index[i],nums[i])
+        # return target
+        # 评论里看到的纯切片操作,以要插入的数为分隔点，进行左右两边的相加，确实是个不错的方法
+            target = target[0:index[i]] + [nums[i]] + target[index[i]:]
         return target
+
 
 if __name__ == '__main__':
     Solution=Solution()
