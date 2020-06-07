@@ -22,11 +22,14 @@
 """
 class Solution:
     def shuffle(self, nums, n):
-        newlist=[]
-        for i in range(n):
-            newlist.append(nums[:n][i])
-            newlist.append(nums[n:][i])
-        return newlist
+        # newlist=[]
+        # for i in range(n):
+        #     newlist.append(nums[:n][i])
+        #     newlist.append(nums[n:][i])
+        # return newlist
+        # 下面试评论看到的，利用双向
+        nums[::2], nums[1::2] = nums[:n], nums[n:]
+        return nums
 
 if __name__ == '__main__':
     Solution=Solution()
