@@ -34,6 +34,8 @@ class Solution:
         for i in range(len(nums) // 2):
             new += [nums[i * 2 + 1]] * nums[i * 2]
         return new
+        #经典的看评论
+        # return sum(([b] * a for a, b in zip(nums[::2], nums[1::2])), [])
 
 if __name__ == '__main__':
     Solution=Solution()
