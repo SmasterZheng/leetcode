@@ -39,17 +39,20 @@ class Solution:
         :param paths:
         :return:
         '''
-        result=0
-        shou,wei=[],[]
-        # 分出首尾两个列表
-        for i in paths:
-            shou.append(i[0])
-            wei.append(i[1])
-        for i in wei:
-            # 判断尾列表里的元素没有在首列表中出现 就是终点
-            if i not in shou:
-                result=i
-        return result
+        # result=0
+        # shou,wei=[],[]
+        # # 分出首尾两个列表
+        # for i in paths:
+        #     shou.append(i[0])
+        #     wei.append(i[1])
+        # for i in wei:
+        #     # 判断尾列表里的元素没有在首列表中出现 就是终点
+        #     if i not in shou:
+        #         result=i
+        # return result
+        # 评论看到的一行代码，利用set后面集合-前面的集合，返回最后得到的最后一个元素即可
+        return (set(p[1] for p in paths) - set(p[0] for p in paths)).pop()
+
 
 if __name__ == '__main__':
     Solution=Solution()
