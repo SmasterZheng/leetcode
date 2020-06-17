@@ -31,7 +31,7 @@ class Solution:
             else:
                 days=[]
             months.append(days)
-        for i in months:
+        for i in months: # 去重days里重复添加的日期
             allmon.append(self.listset(i))
         newallmon = self.listset(allmon) #[[],[]]得到按月份分类的日期
 
