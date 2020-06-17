@@ -5,6 +5,17 @@
 输出：['20200109','20200208']
 """
 class Solution:
+    def listset(self, dates):
+        '''
+        :param dates: [[],[]]
+        :return: [[]]
+        '''
+        list1=[]
+        for i in dates:
+            if i not in list1:
+                list1.append(i)
+        return list1
+
     def month4(self, dates):
         '''
         思路:按照月份进行分类，取第四个日期
@@ -13,17 +24,17 @@ class Solution:
         '''
         months=[]
         days = []
-        for i in range(len(dates)):
-            if dates[i][:6]==dates[i-1][:6]:
-                days.append(dates[i-1])
+        for i in range(1,len(dates)):
+            if dates[i-1][:6]==dates[i][:6] :
+                days.append(dates[i])
             else:
                 days=[]
             months.append(days)
+        return self.listset(months)
 
-        print(months)
 
 if __name__ == '__main__':
     Solution=Solution()
     dates=['20200104','20200105','20200107','20200109','20200110','20200112',
      '20200204','20200205','20200206','20200208','202002011']
-    Solution.month4(dates)
+    print(Solution.month4(dates))
