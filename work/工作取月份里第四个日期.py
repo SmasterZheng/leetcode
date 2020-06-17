@@ -22,19 +22,28 @@ class Solution:
         :param dates:
         :return:
         '''
-        months=[]
-        days = []
+        months,days,allmon,redata=[],[],[],[]
         for i in range(1,len(dates)):
-            if dates[i-1][:6]==dates[i][:6] :
+            if dates[i-1][:6]==dates[i][:6]:
+                days.append(dates[i-1])
                 days.append(dates[i])
+                # days=self.listset(days)
             else:
                 days=[]
             months.append(days)
-        return self.listset(months)
+        for i in months:
+            allmon.append(self.listset(i))
+        newallmon = self.listset(allmon) #[[],[]]得到按月份分类的日期
+
+        for i in newallmon:
+            if len(i)>=4:# 判断月份中存在第四个日期的
+                redata.append(i[3])
+        return redata
+
 
 
 if __name__ == '__main__':
     Solution=Solution()
     dates=['20200104','20200105','20200107','20200109','20200110','20200112',
-     '20200204','20200205','20200206','20200208','202002011']
+           '20200204','20200205','20200206','20200208','202002011']
     print(Solution.month4(dates))
