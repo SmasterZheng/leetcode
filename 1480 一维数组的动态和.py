@@ -31,10 +31,21 @@ class Solution:
         :param nums:
         :return:
         '''
-        ans = []
-        for i in range(len(nums)):
-            ans.append(sum(nums[:i+1]))
-        return ans
+        # ans = []
+        # for i in range(len(nums)):
+        #     ans.append(sum(nums[:i+1]))
+        # return ans
+        # 第二种写法，意思差不多
+
+        # ans = []
+        # s = 0
+        # for i in range(len(nums)):
+        #     s += nums[i]
+        #     ans.append(sum(nums[:i + 1]))
+        # return ans
+        # 经典的评论
+        return [sum(nums[0:i+1]) for i in range(len(nums))]
+
 
 if __name__ == '__main__':
     Solution=Solution()
