@@ -15,16 +15,22 @@
 输入: [4,3,2,1]
 输出: [4,3,2,2]
 解释: 输入数组表示数字 4321。
+
+示例 3:
+输入: [9],[9,9]
+输出: [1,0],[1,0,0]
+解释: 输入数组表示数字 4321。
 """
 class Solution:
     def plusOne(self, digits) :
         '''
-        思路：原列表不变，最后一个digits[-1]的数值加一
+        思路：''.join(map(str,digits)) 利用map，将单个整型拼接转成字符串，然后利用eval再转成合成的整型
+        再利用map(int,str),再转成字符型
         :param digits:
         :return:
         '''
-        return digits[:-1]+[digits[-1]+1]
+        return list(map(int,str(eval(''.join(map(str,digits)))+1)))
 
 if __name__ == '__main__':
     Solution=Solution()
-    print(Solution.plusOne([4,3,2,1]))
+    print(Solution.plusOne([9,9]))

@@ -12,6 +12,9 @@
 解释: 输入不存在公共前缀。
 
 '''
+
+
+
 class Solution:
     def longestCommonPrefix(self, strs):
         # 判断最小的字符串，再拿最小的里面的部分依次对比其他两个

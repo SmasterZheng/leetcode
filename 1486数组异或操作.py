@@ -42,11 +42,12 @@ class Solution:
         '''
         # nums=[]
         end=0
-        for i in range(n):
-            # nums.append(start+2*i)
-            # end1=start+2*i
-            end^=(start+2*i)
-        return end
+        # for i in range(n):
+        #     # nums.append(start+2*i)
+        #     # end1=start+2*i
+        #     end^=(start+2*i)
+        # return end
+        return end^=(start+2*i) for i in range(n)
 
 if __name__ == '__main__':
     Solution=Solution()
