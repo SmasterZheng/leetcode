@@ -29,7 +29,7 @@ class Solution:
         :param digits:
         :return:
         '''
-        return list(map(int,str(eval(''.join(map(str,digits)))+1)))
+        return list(map(int,str(int(''.join(map(str,digits)))+1)))
 
 if __name__ == '__main__':
     Solution=Solution()
