@@ -13,9 +13,10 @@ sys.setrecursionlimit(100000)  # 修改递归的深度
 def fact(n):
     if n==1:
         return 1
-    return n * fact(n - 1)
+    print('此时的n为:%d' %n)
+    return n * fact(n - 1)   # 计算n的阶乘
 
 
 
 if __name__ == '__main__':
-    print(fact(10))
+    print(fact(3))
