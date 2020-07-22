@@ -20,23 +20,25 @@ class Solution:
         :return:
         '''
 
-        leg=[0]
-        for i in range(len(nums)):
-            if nums[i]==0:
-                leg.append(i)
-        leg.append(len(nums))
-        a = leg[0] # 防止第一个数不是0，就先加上0
-        print(leg) # 取出所有0的位置所在数[0, 0, 3, 7, 9]和整个nums的长度
-        num=[]
-        for i in range(len(leg)):
-            if i>=1:
-                s=leg[i]-leg[i-1] # 对比0所在位数[0, 0, 3, 7, 9]，利用冒泡排序，两两相减，得到的数减一即可
-                if a>s:
-                    num.append(a)
-                a=s
-        return num[0]-1
-
+        # leg=[]
+        # for i in range(len(nums)):
+        #     if nums[i]==0:
+        #         leg.append(i)
+        # leg.append(len(nums))
+        # # a = leg[0] # 防止第一个数不是0，就先加上0
+        # print(leg) # 取出所有0的位置所在数[0, 0, 3, 7, 9]和整个nums的长度
+        # num=[]
+        # a=0
+        # for i in range(len(leg)):
+        #     if i>=1:
+        #         s=leg[i]-leg[i-1] # 对比0所在位数[0, 0, 3, 7, 9]，利用冒泡排序，两两相减，得到的数减一即可
+        #         if a>s:
+        #             num.append(a)
+        #         a=s
+        # return num[0]-1
+        # 看评论经典一行代码：
+        return max([len(i) for i in ''.join(list(map(str, nums))).split('0')])
 
 if __name__ == '__main__':
     Solution=Solution()
-    print(Solution.findMaxConsecutiveOnes([0,1,1,0,1,1,1,0,1]))
+    print(Solution.findMaxConsecutiveOnes([1,1,0,1]))
