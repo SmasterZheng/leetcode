@@ -27,7 +27,7 @@ def url(): # 默认请求方式为GET
     url = request.form['url']
     print(url)  # 获取前端form里的输入
     imgurl = qrc.url(url)
-    return imgurl
+    return open(imgurl,'rb').read() # 图片的二进制信息
 
 if __name__ == '__main__':
     app.run(debug=True) # flask 的debug默认关闭，但别的框架是启用的，测试环境使用，生产环境不行，因为会暴露代码
