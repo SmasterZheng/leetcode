@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>通过url生成二维码</title>
+    <!--啊啊啊啊为什么代码没有高亮啊-->
+    <style>
+        nav li {list-style: none;float:left;margin:50px;}
+        .form {position:absolute;top:200px;left:100px;
+    </style>
 </head>
 <body>
+<nav>
+
+    <ul>
+        <li><a href="/url" >url生成二维码</a></li>
+        <li><a href="/text" >文字生成二维码</a></li>
+    </ul>
+</nav>
+<div class="form">
     <form action="/url" method="post">
         url: <input type="text" name="url" value="http://" placeholder="请输入url" />
         <input type="submit" value="生成二维码">
     </form>
+</div>
 </body>
 </html>
