@@ -29,15 +29,20 @@ def numberOfSteps (num: int) -> int:
     :param num:
     :return:
     '''
-    s=0
-    while num!=0:
-        if num%2==0:
-            num=num/2
-            s+=1
-        else:
-            num=num-1
-            s+=1
-    return s
+    # s=0
+    # while num!=0:
+    #     if num%2==0:
+    #         num=num/2
+    #         s+=1
+    #     else:
+    #         num=num-1
+    #         s+=1
+    # return s
+    # 经典看评论
+    #大佬回复：en(binary)是计算除2的次数，但需要实际的二进制长度减1，len(binary)是看二进制的长度，
+    #         有符号两位所以最后减3 count 1 是看减一次数
+    binary = bin(num)
+    return len(binary) + binary.count('1') - 3
 
 if __name__ == '__main__':
     s=numberOfSteps(10)
