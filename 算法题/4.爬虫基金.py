@@ -17,16 +17,21 @@ def get_html(page):
         'Referer':'http://cx.cnca.cn/'
     }
 
-
     url="https://neris.csrc.gov.cn/alappl/home/gongshi2.do?pageNo={}".format(page)
     strhtml = requests.get(url,headers=headers,verify=False)
     return strhtml.text
 
 def parse_one_page():
-    html=get_html(page=100)
-    re.findall('嘉实基金')
+    html=get_html(page=101)
+    soup = bs(html, 'lxml')
+    title = soup.select('.titleshow')
+    for i in title:
+        if '嘉实' in i.text:
+            print(i.text)
+    # a=re.findall('嘉实基金',html)
+    # b=re.match()
+    # print(title)
 
 
 if __name__ == '__main__':
-    a=get_html(3)
-    print(a)
+    parse_one_page()
